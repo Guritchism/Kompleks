@@ -1,0 +1,137 @@
+h1,h2,h3,h4,h5,h6, p, li, span, label, td, th, a {
+	font-family: sans-serif;
+}
+
+
+h1{
+	text-align:center;
+}
+
+.title_nopad {
+	padding: 0;
+	margin: 0;
+}
+
+.author_subtitle {
+	width: 100%;
+	text-align:center;
+	font-weight:bold;
+	padding: 0;
+	margin: 0;
+}
+
+.title_div_pad {
+	margin: 1em;
+}
+
+div.main{
+	background-color:#e9e9ff;
+	max-width:750px;
+	padding:5pt;
+	border-radius: 10px;
+	border: 1px solid black;
+}
+
+.unimportant{
+	color:gray;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #EAE0D5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    color: #22333B;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  .logo {
+    position: relative;
+    display: flex;
+    align-items: center; /* Center the content vertically */
+  }
+  
+  .logo img {
+    height: 50px;
+    margin-right: 10px; /* Margin between logo and text */
+  }
+  
+  .logo h1, .logo h2 {
+    position: absolute;
+    top: -5px; /* Jarak dari bagian atas container */
+    left: 50px; /* Jarak dari kiri container */
+    margin: 5px; /* Hapus margin default untuk menghindari celah */
+  }
+  
+  .logo h1 {
+    font-size: 24px; /* Ukuran teks */
+  }
+  
+  .logo h2 {
+    font-size: 24px; /* Ukuran font untuk h2 */
+    top: 18px; /* Jarak antara h1 dan h2 */
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #22333B;
+    padding: 10px 20px; /* Tambahkan padding agar tautan lebih mudah diakses */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Animasi transisi */
+    border: 1px solid transparent; /* Sembunyikan border awalnya */
+    display: inline-block; /* Agar kotak mengelilingi teks */
+  }
+  
+  nav ul li a:hover {
+    text-decoration: none;
+    background-color: #D5BDAF; /* Warna latar belakang kotak saat dihover */
+    color: #333; /* Warna teks saat dihover */
+    border: 1px solid #D5BDAF; /* Tampilkan border saat dihover */
+  }  
+
+  main section a {
+    font-size: 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    border: 1px solid; /* Atur border awalnya menjadi transparan */
+    display: inline-block;
+    padding: 10px 20px; /* Tambahkan padding agar tautan lebih mudah diakses */
+    transition: all 0.3s ease; /* Animasi transisi */
+    color: #4D869C;
+  }
+  
+  main section p {
+    font-family: Montserrat;
+    color:#4D869C;
+    font-size: 20px;
+  }
+  
+  main section h1 {
+    font-size: 45px;
+    color: #4D869C;
+  }

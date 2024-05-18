@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('Background22.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  width: 200vh;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  color: #22333B;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center; /* Center the content vertically */
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px; /* Margin between logo and text */
+}
+
+.logo h1, .logo h2 {
+  position: absolute;
+  top: -5px; /* Jarak dari bagian atas container */
+  left: 50px; /* Jarak dari kiri container */
+  margin: 5px; /* Hapus margin default untuk menghindari celah */
+}
+
+.logo h1 {
+  font-size: 24px; /* Ukuran teks */
+}
+
+.logo h2 {
+  font-size: 24px; /* Ukuran font untuk h2 */
+  top: 18px; /* Jarak antara h1 dan h2 */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #22333B;
+  padding: 10px 20px; /* Tambahkan padding agar tautan lebih mudah diakses */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Animasi transisi */
+  border: 1px solid transparent; /* Sembunyikan border awalnya */
+  display: inline-block; /* Agar kotak mengelilingi teks */
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+  background-color: #D5BDAF; /* Warna latar belakang kotak saat dihover */
+  color: #333; /* Warna teks saat dihover */
+  border: 1px solid #D5BDAF; /* Tampilkan border saat dihover */
+}
+
+main {
+  padding: 150px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+section {
+  Display: flex;
+  Justify-content: center;
+  Align-items: center;
+}
+
+main section {
+  max-width: auto; /* Atur lebar maksimum konten */
+  margin: 0px auto; /* Pusatkan konten di tengah */
+  text-align: left; /* Pusatkan teks ke kiri */
+  padding-left: 100px; /* Atur padding kiri untuk memberi ruang bagi gambar */
+  display: flex; /* Atur tata letak flex untuk mengatur posisi gambar dan konten */
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+}
+
+.gambar-muncul {
+  opacity: 1; /* Atur opasitas gambar menjadi 1 saat kelas 'gambar-muncul' ditambahkan */
+  transform: translateY(0); /* Kembalikan ke posisi awal (tidak ada translasi) */
+}
+
+.konten {
+  opacity: 0;
+  animation: slideIn 1s ease-out forwards;
+  flex: 1; /* Biarkan konten mengisi sisa ruang yang tersedia di sebelah kanan gambar */
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.konten-p {
+  text-align: center;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+main section a {
+  font-size: 20px;
+  margin-top: 15px;
+  text-decoration: none;
+  border: 1px solid; /* Atur border awalnya menjadi transparan */
+  display: inline-block;
+  padding: 10px 20px; /* Tambahkan padding agar tautan lebih mudah diakses */
+  transition: all 0.3s ease; /* Animasi transisi */
+  color: #22333B;
+}
+
+main section a:hover {
+  background-color: #D5BDAF; /* Warna latar belakang kotak saat dihover */
+  color: #fafafa; /* Warna teks saat dihover */
+  border-color: #D5BDAF; /* Atur warna border saat dihover */
+}
+
+main section p {
+  font-family: Montserrat;
+  color:#5E503F;
+  font-size: 22px;
+  align-items: center;
+}
+
+main section h1 {
+  font-size: 60px;
+  color: #5E503F;
+  font-family: Poppins;
+}
+
+main section h1, main section p, main section a {
+  transition: transform 0.3s ease; /* Animasi transisi */
+  margin-bottom: 20px; /* Menambahkan celah 20px di bawah setiap elemen */
+  margin-left: 100px; /* Geser elemen ke kiri untuk membuat ruang bagi gambar */
+  font-family: Poppins;
+  color: #5E503F;
+  justify-content: center;
+}
+
+main section h1:hover, main section p:hover, main section a:hover {
+  transform: scale(1.1); /* Perbesar elemen saat dihover */
+}
