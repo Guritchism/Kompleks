@@ -14,15 +14,9 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/calc_style.css">
 	<script type="text/javascript" src="js/dropdown_and_inc_widget.js"></script>
-	<!-- TODO figure out how to include this file from within calc_ui.js -->
 	<script type="text/javascript" src="js/calc_ui_unit_sel.js"></script>
 	<script type="text/javascript" src="js/calc_ui.js"></script>
-	<!--<script type="text/javascript" src="js/calc_wasm.js"></script>-->
-	<!--<script type="text/javascript" src="js/calc_wasm_wrapper.js"></script>-->
-	<!-- Needed by MathJax (I think) -->
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-	<!-- For LaTeX support -->
-	<!--<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>-->
 
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
 	<title>kompleks</title>
@@ -360,13 +354,10 @@
 		  <div class="output_btn_container">
 		  <div class="output_btns" style="text-align:right">
 			  <select id="dark_mode_select">
-				  <option value=""></option>
-				  <option value=""></option>
-				  <option value=""></option>
 			  </select>
 			  <br/>
 			  <label> </label>
-			  <input type="checkbox" id="checkbox_show_raw">
+			  <input type="hidden" id="checkbox_show_raw">
 		  </div>
 		  </div>
   
@@ -374,18 +365,7 @@
 		  <div id="output_text">
   
 		  <h1>Kompleks!</h1>
-		  <p id="calc_terms_notice_small">Lihat materi bilangan kompleks <a href="tutorial.html" id="about_popup_link_terms_notice">disini</a>.</p>
-		  <!--
-		  <p>\[ e^{j\theta} + 1 = 0 \]</p>
-		  <p>\[ Z_o = \sqrt{\frac{R + j \omega L}{G + j \omega C}} \]</p>
-		  <p>\[ Z_o = \sqrt{\frac{\square + j \omega L}{G + j \omega C}} \]</p>
-		  <p>\[ H(s) = \frac{(s + 3)(s - 4)}{(s-5)(s-2)(s-8)^2} \]</p>
-		  <p>\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]</p>
-		  <p>\[ e^{i\pi} + 1 = 0 \]</p>
-		  <p>\[ \sin^2(\theta) + \cos^2(\theta) = 1\]</p>
-		  <p>\[ e^{j\theta} = \cos \theta + j \sin \theta\]</p>
-		  <p>\[ \sin \theta = \frac{e^{j\theta} - e^{-j\theta}}{2j} \]</p>
-		  -->
+		  <p id="calc_terms_notice_small">Lihat materi bilangan kompleks <a href="about.html" id="about_popup_link_terms_notice">disini</a>.</p>
 		  </div>
 		  <p id="input_wip_display">
 		  </p>
