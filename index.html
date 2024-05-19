@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
@@ -14,9 +13,15 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/calc_style.css">
 	<script type="text/javascript" src="js/dropdown_and_inc_widget.js"></script>
+	<!-- TODO figure out how to include this file from within calc_ui.js -->
 	<script type="text/javascript" src="js/calc_ui_unit_sel.js"></script>
 	<script type="text/javascript" src="js/calc_ui.js"></script>
+	<!--<script type="text/javascript" src="js/calc_wasm.js"></script>-->
+	<!--<script type="text/javascript" src="js/calc_wasm_wrapper.js"></script>-->
+	<!-- Needed by MathJax (I think) -->
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<!-- For LaTeX support -->
+	<!--<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>-->
 
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
 	<title>kompleks</title>
@@ -273,6 +278,10 @@
 		  margin:2px;
 		  flex:1;
 	  }
+  
+  
+  
+	  .unit_sel_item {
 		  /*
 		  color: #0000AA;
 		  text-decoration: underline;
@@ -366,6 +375,17 @@
   
 		  <h1>Kompleks!</h1>
 		  <p id="calc_terms_notice_small">Lihat materi bilangan kompleks <a href="about.html" id="about_popup_link_terms_notice">disini</a>.</p>
+		  <!--
+		  <p>\[ e^{j\theta} + 1 = 0 \]</p>
+		  <p>\[ Z_o = \sqrt{\frac{R + j \omega L}{G + j \omega C}} \]</p>
+		  <p>\[ Z_o = \sqrt{\frac{\square + j \omega L}{G + j \omega C}} \]</p>
+		  <p>\[ H(s) = \frac{(s + 3)(s - 4)}{(s-5)(s-2)(s-8)^2} \]</p>
+		  <p>\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]</p>
+		  <p>\[ e^{i\pi} + 1 = 0 \]</p>
+		  <p>\[ \sin^2(\theta) + \cos^2(\theta) = 1\]</p>
+		  <p>\[ e^{j\theta} = \cos \theta + j \sin \theta\]</p>
+		  <p>\[ \sin \theta = \frac{e^{j\theta} - e^{-j\theta}}{2j} \]</p>
+		  -->
 		  </div>
 		  <p id="input_wip_display">
 		  </p>
@@ -382,7 +402,7 @@
 			  <!-- row 0 -->
 			  <button id="btn_clear"		class="btn btn_important" style="z-index: 1; width:195%">			clear</button>
 			  <div class="btn unused"></div> <!-- spacer for btn_clear -->
-			  <button id="btn_bksp"		class="btn btn_important">Hapus</button>
+			  <button id="btn_bksp"		class="btn btn_important">			Hapus</button>
 			  <div class="btn unused"></div>
 			  <button id="btn_up"		class="btn meta"> &uarr; </button>
 			  <div class="btn unused"></div>
@@ -612,29 +632,6 @@
 	  </div>
 	  <div id="about_popup" class="popup_cls" style="display:none;overflow-y:scroll;padding:20px">
 		  <button id="close_about_popup_x_btn" class="popup_selector_exit_btn btn_important popup_btn_ctrl_style" style="display:float">X</button>
-		  <h2 style="text-align:center;margin-top:0">About </h2>
-		  <p> is a scientific calculator with an equation display, and supports variables, units, and complex numbers.</p>
-		  <p><a class="licenses" href="help.html">How to use </a>.</p>
-		  <p>Created by <a href="https://github.com/alexbarry">Alex Barry</a>.</p>
-		  <p>Also available on other platforms:
-			  <ul>
-				  <li><strong>Android app</strong>: <a href="https://play.google.com/store/apps/details?id=net.alexbarry.calc_android">Google Play</a></li>
-				  <li><strong>iOS</strong>: <a href="add_to_ios_home.html">How to add a shortcut to home screen on iOS</a>
-				  <li><strong>Web</strong> (desktop/mobile): <a href="https://alexbarry.github.io//">https://alexbarry.github.io//</a> (you should be on this page now)</li>
-			  </ul>
-		  </p>
-		  <p>Please submit comments, feedback, feature requests, or discussions to:
-		  <ul>
-			  <li><strong>Github</strong>: <a href="" style="font-family:monospace"></a></li>
-			  <li><strong>Reddit</strong>: <a href="" style="font-family:monospace"></a></li>
-			  <li><strong>Discord</strong>: <a href="" style="font-family:monospace"></a></li>
-			  <li><strong>Email</strong>: <span style="font-family:monospace"></span></li>
-			  <li><strong>Matrix</strong>: <a href="" style="font-family:monospace"></a></li>
-		  </ul>
-		  </p>
-		  <p><strong></strong>: <span style="font-family:monospace"><span><p>
-  
-		  <p><a class="licenses" href="licenses.html">Licenses</a></p>
 		  <p><a id="close_about_popup_link" href="#">Close the "About" popup</a></p>
 	  </div>
   
@@ -644,11 +641,21 @@
 		  <ul class="footer_items">
 			  <li><a id="open_about_popup_link" href="#"></a></li>
 			  <li><a href="help.html"></a></li>
-			  <li><a class="licenses" href=""></a></li>
+			  <li><a class="licenses" href="licenses.html"></a></li>
 		  </ul>
 	  </div>
   
-	  
+	  <!--
+		 Detecting whether "forced dark mode" is enabled on chrome, since for some reason it doesn't
+		 cause the {typical test for whether or not the user wants darkmode} to return true, which is:
+		
+			 window.matchMedia("(prefers-color-scheme: dark)")
+		
+		 So this is an unfortunate hack.
+		 The alternative would be to let chrome invert my light theme willy-nilly, but that doesn't seem to work
+		 very well with my (perhaps poor) choice of light mode colours.
+		 See https://developer.chrome.com/blog/auto-dark-theme/#detecting-auto-dark-theme
+	  -->
 	  <div id="auto_dark_mode_detection" style="display: none; background-color: canvas; color-scheme: light;"></div>
   
   
@@ -763,7 +770,7 @@
 			  about_popup: document.getElementById("about_popup"),
   
 			  show_about_popup_btns: [
-				  document.getElementById("open_about_popup_link"),
+				  document.getElementById("open_about_popup_link")
 			  ],
 			  close_about_popup_btns: [
 				  document.getElementById("close_about_popup_link"),
@@ -789,7 +796,7 @@
 			  },
   
 			  update_calcstate: function (states) {
-				  _set_states(states);
+				  alexcalc_set_states(states);
 			  },
   
 			  calc_async:     function (x, callback) {
@@ -797,11 +804,16 @@
 					  alert("wasm not loaded yet, please wait");
 					  return null;
 				  }
-				  _async(x, callback);
+				  alexcalc_async(x, callback);
 			  } ,
   
   
-			
+			  // determines if input wip display is shown
+			  // (specifically, if there's significant whitespace after the
+			  // last output, which is not desirable if you want to look at it
+			  // and have a small screen)
+			  // should be set to true when any input is given,
+			  // set to false only when the user presses enter.
 			  show_input_wip_display: false,
   
 			  input_wip_display: document.getElementById("input_wip_display"),
@@ -844,7 +856,12 @@
 				  return { elem: elem, stylesheet: stylesheet};
 			  },
   
-			
+			  // TODO I think this is way too slow, see
+			  //     http://docs.mathjax.org/en/latest/web/typeset.html#typeset-async
+			  // but maybe there is a faster way if it doesn't have to search the whole page,
+			  // can you tell it to refresh only one element?
+			  //refresh_output_latex: function () { MathJax.typeset(); },
+  
 			  wip_display_stylesheet_nodes: [],
   
 			  update_input_wip_display: function (tex) {
